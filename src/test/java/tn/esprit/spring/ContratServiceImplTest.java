@@ -1,6 +1,7 @@
 
 package tn.esprit.spring;
 
+import org.junit.Before;
 //import org.apache.logging.log4j.LogManager;
 import org.junit.Test;
 
@@ -42,12 +43,39 @@ Logger logger = LoggerFactory.getLogger(ContratServiceImplTest.class);
 	@Autowired
 	EmployeRepository employeRepository;
 	
+	
+	
+	
+	@Before
+    public void setup1() {
+       // MockitoAnnotations.initMocks(this);
+		contratRepository.deleteAll();
+        logger.info("intialisation done");
+    }
+	
+	@Before
+    public void setup2() {
+       // MockitoAnnotations.initMocks(this);
+		contratRepository.deleteAll();
+        logger.info("intialisation done");
+    }
+	
+	@Before
+    public void setup3() {
+       // MockitoAnnotations.initMocks(this);
+		contratRepository.deleteAll();
+        logger.info("intialisation done");
+    }
+	
+	
+	
+	
 	/*
 	@Test(timeout =2000)
 	public void testgetAllContrats() {
 		List<Contrat> contrats = contratRepository.findAll();
 		assertThat(contrats).size().isGreaterThan(0);
-		l.info("la liste des contrats est :", contrats);
+		logger.info("la liste des contrats est :", contrats);
 	}
 
 */
@@ -81,7 +109,9 @@ Logger logger = LoggerFactory.getLogger(ContratServiceImplTest.class);
 				Contrat c = new Contrat(1, "CDD", 2);
 				iemployeservice.ajouterContrat(c);
 				iemployeservice.deleteContratById(c.getReference());
-				assertNull(employeRepository.findById(c.getReference()));
+				 assertThat(contratRepository.findAll()).isEmpty();
+        		logger.info("deleted successfully" );
+				//assertNull(employeRepository.findById(c.getReference()));
 }
 
 	*/
