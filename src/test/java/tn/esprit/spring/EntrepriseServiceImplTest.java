@@ -83,7 +83,7 @@ public class EntrepriseServiceImplTest {
 		
 		int  e = ientrepriseservice.ajouterEntreprise(entreprises);
 		ientrepriseservice.deleteEntrepriseById(e);
-		assertThat(ent.findById(e).empty());
+		assertNull(ent.findById(e));
 		logger.info("done!! " );
 	
 		
