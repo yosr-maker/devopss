@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 import java.text.ParseException;
+import java.util.Optional;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,6 +17,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Entreprise;
+import tn.esprit.spring.repository.DepartementRepository;
 import tn.esprit.spring.repository.EntrepriseRepository;
 import tn.esprit.spring.services.IDepartementService;
 import tn.esprit.spring.services.IEntrepriseService;
@@ -33,6 +35,9 @@ public class EntrepriseServiceImplTest {
 	IEntrepriseService ientrepriseservice;
 	@Autowired
 	IDepartementService idepartement;
+	
+	@Autowired
+	DepartementRepository idepartementrepo;
 	
 	@Autowired
 	EntrepriseRepository ent;
@@ -76,5 +81,24 @@ public class EntrepriseServiceImplTest {
 	
 		 
 	}
+	
+	
+	
+	@Test
+	public void  deleteDepartementById(){
+		Departement department = new Departement("dev");
+		int d = ientrepriseservice.ajouterDepartement(department);
+		idepartement.deleteDepartementById(d);
+		idepartementrepo.findById(d);
+		assertThat(Optional.empty());
+		logger.info("success!! " );
+		
+		
+		
+		
+		
+		
+	}
+	
 
 }
