@@ -1,6 +1,7 @@
 package tn.esprit.spring;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 import java.text.ParseException;
 
@@ -55,6 +56,20 @@ public class EntrepriseServiceImplTest {
 		assertEquals(idDepartement, department.getId());
 		
 		
+	}
+	
+	
+	@Test
+	public void deleteEntrepriseById(){
+		
+		Entreprise entreprises = new Entreprise("vitalait", "bbbbbb") ;
+		
+		ientrepriseservice.ajouterEntreprise(entreprises);
+		assertEquals(entreprises, ientrepriseservice.getEntrepriseById(entreprises.getId()));
+		logger.info("done : " ,entreprises);
+		ientrepriseservice.deleteEntrepriseById(entreprises.getId());
+		assertNull(ientrepriseservice.getEntrepriseById(entreprises.getId()));
+		logger.info("l entreprise a été supprimée " ); 
 	}
 
 }
