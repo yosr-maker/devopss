@@ -2,6 +2,7 @@ package tn.esprit.spring;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import java.text.ParseException;
@@ -19,6 +20,7 @@ import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Entreprise;
 import tn.esprit.spring.repository.DepartementRepository;
 import tn.esprit.spring.repository.EntrepriseRepository;
+import tn.esprit.spring.services.EntrepriseServiceImpl;
 import tn.esprit.spring.services.IDepartementService;
 import tn.esprit.spring.services.IEntrepriseService;
 
@@ -47,10 +49,14 @@ public class EntrepriseServiceImplTest {
 	public void  testAjouterEntreprise() throws ParseException{
 		
 		
+		
+		
 		Entreprise entreprise = new Entreprise("vitalait", "AAAAAA") ;
 		
 		int idEntreprise=ientrepriseservice.ajouterEntreprise(entreprise);
+		
 		assertEquals(idEntreprise, entreprise.getId());
+		
 		
 		
 		
@@ -63,6 +69,7 @@ public class EntrepriseServiceImplTest {
 		
 		Departement department = new Departement("ressourceH");
 		int idDepartement = ientrepriseservice.ajouterDepartement(department);
+		
 		assertEquals(idDepartement, department.getId());
 		
 		
@@ -70,7 +77,7 @@ public class EntrepriseServiceImplTest {
 	
 	
 	@Test
-	public void deleteEntrepriseById()throws ParseException{
+	public void testDeleteEntrepriseById()throws ParseException{
 		
 		Entreprise entreprises = new Entreprise("lait", "bbbbbb") ;
 		
@@ -79,13 +86,12 @@ public class EntrepriseServiceImplTest {
 		assertThat(ent.findById(e).empty());
 		logger.info("done!! " );
 	
-		 
+		
 	}
-	
-	
+
 	
 	@Test
-	public void  deleteDepartementById(){
+	public void  testDeleteDepartementById(){
 		Departement department = new Departement("dev");
 		int d = ientrepriseservice.ajouterDepartement(department);
 		idepartement.deleteDepartementById(d);
@@ -94,11 +100,28 @@ public class EntrepriseServiceImplTest {
 		logger.info("success!! " );
 		
 		
-		
-		
-		
-		
 	}
 	
-
+	@Test
+	public void testgetEntrepriseById(){
+		
+		Entreprise entre =new Entreprise("lait", "bbbbbb") ;
+	int	id=ientrepriseservice.ajouterEntreprise(entre);
+		assertEquals(id,entre.getId());
+		assertNotNull(ientrepriseservice.getEntrepriseById(id));
+		logger.info("l objet n est pas null " );
+		Entreprise entre1=ientrepriseservice.getEntrepriseById(id);
+		
+		assertEquals(entre.getId(), entre1.getId());
+		assertEquals(entre.getName(), entre1.getName());
+		assertEquals(entre.getId(), entre1.getId());
+		logger.info("done!! " );
+	}
+	
+	
+	
+	
+	
+	
+   
 }
