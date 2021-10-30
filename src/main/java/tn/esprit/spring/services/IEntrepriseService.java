@@ -1,4 +1,4 @@
-package tn.esprit.spring.services;
+/*package tn.esprit.spring.services;
 
 import java.util.List;
 
@@ -15,3 +15,4 @@ public interface IEntrepriseService {
 	public void deleteDepartementById(int depId);
 	public Entreprise getEntrepriseById(int entrepriseId);
 }
+*/
