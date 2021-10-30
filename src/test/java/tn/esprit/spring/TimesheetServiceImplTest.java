@@ -86,7 +86,7 @@ public class TimesheetServiceImplTest {
 	@Before
     public void setup3() {
        // MockitoAnnotations.initMocks(this);
-		//repoTime.deleteAll();
+		repoTime.deleteAll();
         l.info("intialisation done");
     }
 	
@@ -96,11 +96,15 @@ public class TimesheetServiceImplTest {
 		//repoMission.deleteAll();
         l.info("Final done");
     }
+<<<<<<< HEAD
 
 	/*
 >>>>>>> yosr
+=======
+	/*
+>>>>>>> 1675c05e13b6033f6320539f10d883e526883acc
 	@Test
-	public void testAddMission() {
+	public void testAddMission() throws ParseException {
 		
 		Mission mission = new Mission( "mymission","it's my mission");
 		Mission  result = ts.ajouterMission(mission);
@@ -112,6 +116,7 @@ public class TimesheetServiceImplTest {
 		
 		
 <<<<<<< HEAD
+<<<<<<< HEAD
 	}
 	
 	
@@ -119,6 +124,10 @@ public class TimesheetServiceImplTest {
 	}*/
 /*	
 >>>>>>> yosr
+=======
+	}*/
+/*	
+>>>>>>> 1675c05e13b6033f6320539f10d883e526883acc
 	@Test
 	public void testGetAllMissions(){
 		Mission mission1 = new Mission( "mymission 1","it's my mission 1");
@@ -128,15 +137,18 @@ public class TimesheetServiceImplTest {
 	
 		List<Mission> missions = (List<Mission>) repoMission.findAll();
 		assertEquals(2, missions.size());
-		int size = missions.size();
-		l.info("Done, list size : {}"  , size);
+		l.info("Done, list size :"  + missions.size());
 	}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	/*
 	
 =======
 
 >>>>>>> yosr
+=======
+
+>>>>>>> 1675c05e13b6033f6320539f10d883e526883acc
 	@Test
 	public void testDeleteMission() {
 		Mission mission = new Mission( "mymission","it's my mission");
@@ -162,9 +174,11 @@ public class TimesheetServiceImplTest {
 			l.error("Erreur dans addMission() : " + e);
 			
 		}
-		
 	}
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 1675c05e13b6033f6320539f10d883e526883acc
 	
 	@Test
 	public void testValiderTimesheet() throws ParseException {
@@ -202,20 +216,23 @@ public class TimesheetServiceImplTest {
 		l.info("Valide");
 		
 	}
+<<<<<<< HEAD
 
 	
 	/*
 =======
 
 >>>>>>> yosr
+=======
+
+>>>>>>> 1675c05e13b6033f6320539f10d883e526883acc
 	@Test
 	public void testAffecterMissionDeppartment() throws ParseException {
 		ts.affecterMissionADepartement(19, 1);
 	}
 	
-	*/
 	
-	/*
+	
 	@Test
 	public void testGetAllTimesheet() {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -226,8 +243,8 @@ public class TimesheetServiceImplTest {
 		
 		//List<Timesheet> timesheets = (List<Timesheet>) repoTime.findAll();
 	//assertThat(timesheets).size().isGreaterThan(0);
-	//l.info(repoTime.findAll());
-	//}	
+	l.info(repoTime.findAll());
+	}	
 	
 
 
