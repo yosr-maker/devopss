@@ -102,7 +102,7 @@ Logger logger = LoggerFactory.getLogger(ContratServiceImplTest.class);
 				assertEquals(1,id);
 			}
 	*/
-	
+/*	
 @Test
 	public void testdeleteContratById() {
 	
@@ -113,7 +113,7 @@ Logger logger = LoggerFactory.getLogger(ContratServiceImplTest.class);
         		logger.info("deleted successfully" );
 				//assertNull(employeRepository.findById(c.getReference()));
 }	
-
+*/
 
 /*
 	 @Test

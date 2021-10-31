@@ -42,7 +42,6 @@ public class EmployeServiceImpl implements IEmployeService {
 
 	//yousr(sonar)
 	public void mettreAjourEmailByEmployeId(String email, int employeId) {
-		//Employe employe = employeRepository.findById(employeId).get();
 		Optional<Employe> value= employeRepository.findById(employeId);
 		if (value.isPresent()) {
 		Employe employe = value.get();

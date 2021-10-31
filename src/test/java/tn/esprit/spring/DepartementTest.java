@@ -43,11 +43,6 @@ assertNotNull(dept.getName());
 logger.info("voila le departement demandé : {} ", dept);
 }
 
-<<<<<<< HEAD
-=======
-*/
->>>>>>> 1675c05e13b6033f6320539f10d883e526883acc
-
 @Test
 public void testajouterDepartement() {
 	
@@ -87,9 +82,6 @@ logger.info("l'ajout est effectué avec succés : {} ", dep);
 
 
 
-
-<<<<<<< HEAD
-=======
 /*
 >>>>>>> 1675c05e13b6033f6320539f10d883e526883acc
 @Test
@@ -107,8 +99,6 @@ assertNull(deptService.getDepartement(depa.getId()));
 logger.info("la suppression est effectuée avec succés " ); 
 
 }
-*/
-
 
 
 
@@ -117,8 +107,9 @@ logger.info("la suppression est effectuée avec succés " );
 
 
 
-*/
 
+
+*/
 
 
 

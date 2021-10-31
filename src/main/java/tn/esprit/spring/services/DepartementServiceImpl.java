@@ -16,7 +16,9 @@ import tn.esprit.spring.repository.EntrepriseRepository;
 
 
 @Service
-public class DepartementServiceImpl implements IDepartementService{
+public class DepartementServiceImpl implements IDepartementService
+
+{
 	@Autowired
 	DepartementRepository departementRepository;
 	
