@@ -51,15 +51,15 @@ Logger logger = LoggerFactory.getLogger(ContratServiceImplTest.class);
 	}
 
 */
-
-	@Test(timeout =2000)
-	public void testajouterContrat() throws ParseException {
-	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-	Date date = dateFormat.parse("2021-06-09");
-	Contrat u = new Contrat(1, date,"CDD",200);
-	iemployeservice.ajouterContrat(u);
-	logger.info("ajout avec succés de contrat: " , u.getReference());
-	}
+//
+//	@Test(timeout =2000)
+//	public void testajouterContrat() throws ParseException {
+//	SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//	Date date = dateFormat.parse("2021-06-09");
+//	Contrat u = new Contrat(1, date,"CDD",200);
+//	iemployeservice.ajouterContrat(u);
+//	logger.info("ajout avec succés de contrat: " , u.getReference());
+//	}
 
 
 	
