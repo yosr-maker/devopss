@@ -1,4 +1,4 @@
-/*package tn.esprit.spring.services;
+package tn.esprit.spring.services;
 
 import java.util.List;
 
@@ -82,4 +82,4 @@ public class DepartementServiceImpl implements IDepartementService
 	
 }
 
-*/
+

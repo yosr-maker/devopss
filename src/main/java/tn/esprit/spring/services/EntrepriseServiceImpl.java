@@ -1,4 +1,4 @@
-/*package tn.esprit.spring.services;
+package tn.esprit.spring.services;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -71,4 +71,3 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 	}
 
 }
-*/

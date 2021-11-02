@@ -1,4 +1,4 @@
-/*package tn.esprit.spring;
+package tn.esprit.spring;
 
 
 import static org.junit.Assert.*;
@@ -34,7 +34,7 @@ IDepartementService deptService;
 
 Logger logger = LoggerFactory.getLogger(DepartementTest.class);
 
-/*
+
 
 @Test
 public void testgetDepartement() {
@@ -79,11 +79,8 @@ logger.info("l'ajout est effectué avec succés : {} ", dep);
 //	//assertEquals(departements.size(), deptService.getAllDepartement().size());
 //}
 
-
-
-
 /*
->>>>>>> 1675c05e13b6033f6320539f10d883e526883acc
+
 @Test
 public void testdeleteDepartementById() {
 
@@ -101,15 +98,13 @@ logger.info("la suppression est effectuée avec succés " );
 }
 
 
-
+*/
 
 }
 
 
 
 
-
-*/
 
 
 
