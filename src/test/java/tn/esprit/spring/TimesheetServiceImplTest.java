@@ -1,10 +1,8 @@
-
 /*package tn.esprit.spring;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -17,28 +15,20 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Mission;
 import tn.esprit.spring.entities.Role;
-import tn.esprit.spring.entities.Timesheet;
-import tn.esprit.spring.entities.TimesheetPK;
 import tn.esprit.spring.repository.EmployeRepository;
 import tn.esprit.spring.repository.MissionRepository;
 import tn.esprit.spring.repository.TimesheetRepository;
 import tn.esprit.spring.services.IEmployeService;
 import tn.esprit.spring.services.IEntrepriseService;
 import tn.esprit.spring.services.ITimesheetService;
-import tn.esprit.spring.services.TimesheetServiceImpl;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -97,13 +87,8 @@ public class TimesheetServiceImplTest {
 		//repoMission.deleteAll();
         l.info("Final done");
     }
-<<<<<<< HEAD
 
-	/*
->>>>>>> yosr
-=======
-	/*
->>>>>>> 1675c05e13b6033f6320539f10d883e526883acc
+
 	@Test
 	public void testAddMission() throws ParseException {
 		
@@ -115,20 +100,10 @@ public class TimesheetServiceImplTest {
 		
 		l.info("Out addMission successfully() without errors.");
 		
-		
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 	}
 	
-	
-=======
-	}*/
-/*	
->>>>>>> yosr
-=======
-	}*/
-/*	
->>>>>>> 1675c05e13b6033f6320539f10d883e526883acc
+
 	@Test
 	public void testGetAllMissions(){
 		Mission mission1 = new Mission( "mymission 1","it's my mission 1");
@@ -140,16 +115,8 @@ public class TimesheetServiceImplTest {
 		assertEquals(2, missions.size());
 		l.info("Done, list size :"  + missions.size());
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD
-	/*
-	
-=======
 
->>>>>>> yosr
-=======
 
->>>>>>> 1675c05e13b6033f6320539f10d883e526883acc
 	@Test
 	public void testDeleteMission() {
 		Mission mission = new Mission( "mymission","it's my mission");
@@ -176,10 +143,7 @@ public class TimesheetServiceImplTest {
 			
 		}
 	}
-<<<<<<< HEAD
-	
-=======
->>>>>>> 1675c05e13b6033f6320539f10d883e526883acc
+
 	
 	@Test
 	public void testValiderTimesheet() throws ParseException {
@@ -217,16 +181,7 @@ public class TimesheetServiceImplTest {
 		l.info("Valide");
 		
 	}
-<<<<<<< HEAD
 
-	
-	/*
-=======
-
->>>>>>> yosr
-=======
-
->>>>>>> 1675c05e13b6033f6320539f10d883e526883acc
 	@Test
 	public void testAffecterMissionDeppartment() throws ParseException {
 		ts.affecterMissionADepartement(19, 1);
@@ -235,7 +190,7 @@ public class TimesheetServiceImplTest {
 	
 	
 	@Test
-	public void testGetAllTimesheet() {
+	public void testGetAllTimesheet() throws ParseException {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date dateDebut = dateFormat.parse("2015-03-23");
 		Date dateFin = dateFormat.parse("2016-03-23");
@@ -250,4 +205,4 @@ public class TimesheetServiceImplTest {
 
 
 }
-	
+	*/
