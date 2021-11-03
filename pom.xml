@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>tn.esprit.spring</groupId>
-	<artifactId>Timesheett</artifactId>
+	<artifactId>Timesheet-spring-boot-core-data-jpa-mvc-REST-1</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
 	<name>Timesheet-spring-boot-core-data-jpa-mvc-REST-1</name>
