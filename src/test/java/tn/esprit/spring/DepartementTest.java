@@ -110,7 +110,7 @@ logger.info("l'ajout est effectué avec succés : {} ", dep);
 
 //
 
-// jenkins 7
+// Automatic push
 
 
 
