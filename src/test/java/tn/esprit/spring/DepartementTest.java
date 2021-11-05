@@ -42,8 +42,6 @@ assertNotNull(dept.getName());
 logger.info("voila le departement demandé : {} ", dept);
 }
 
-
-
 @Test
 public void testajouterDepartement() {
 	
@@ -80,10 +78,7 @@ logger.info("l'ajout est effectué avec succés : {} ", dep);
 //	//assertEquals(departements.size(), deptService.getAllDepartement().size());
 //}
 
-
-
-
-
+/*
 
 //@Test
 //public void testdeleteDepartementById() {
@@ -94,7 +89,7 @@ logger.info("l'ajout est effectué avec succés : {} ", dep);
 //deptService.ajouterDepartement(depa);
 //
 //assertEquals(depa, deptService.getDepartement(depa.getId()));
-//logger.info("l'ajout est effectué avec succés : {} " ,depa);
+//logger.info("l'ajout est effectué avec succés : {] " ,depa);
 //deptService.deleteDepartementById(depa.getId());
 //assertNull(deptService.getDepartement(depa.getId()));
 //logger.info("la suppression est effectuée avec succés " ); 
@@ -104,10 +99,7 @@ logger.info("l'ajout est effectué avec succés : {} ", dep);
 
 
 
-
-
 }
-
 
 
 
