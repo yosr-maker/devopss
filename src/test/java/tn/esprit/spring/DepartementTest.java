@@ -108,9 +108,7 @@ logger.info("l'ajout est effectué avec succés : {} ", dep);
 
 }
 
-//
 
-// Automatic push
 
 
 
