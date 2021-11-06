@@ -10,16 +10,16 @@
 	</parent>
 	<groupId>tn.esprit.spring</groupId>
 	<artifactId>Timesheet-spring-boot-core-data-jpa-mvc-REST-1</artifactId>
-	<version>15.0</version>
+	<version>1.0</version>
 	<packaging>war</packaging>
 	<name>Timesheet-spring-boot-core-data-jpa-mvc-REST-1</name>
 	<description>Timesheet-spring-boot-core-data-jpa-mvc-REST-1</description>
 	<properties>
 		<java.version>1.8</java.version>
-
+		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+	</properties>
 
 	
-  
 
 	<dependencies>
 
@@ -92,15 +92,6 @@
 			<version>1.2.17</version>
 
 		</dependency>
-		
-		<dependency>
-		<groupId>org.jacoco</groupId>
-        <artifactId>jacoco-maven-plugin</artifactId>
-        <version>0.7.9</version>
-        
-        
-		</dependency>
-		
 
 		<!-- JSF -->
 		<dependency>
@@ -155,18 +146,9 @@
 
 	<build>
 		<outputDirectory>src/main/webapp/WEB-INF/classes</outputDirectory>
-		
 		<pluginManagement>
-	        
-                    
+
 			<plugins>
-			
-			
-			
-			
-			
-			
-			
 				<plugin>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-maven-plugin</artifactId>
@@ -208,6 +190,41 @@
 					<artifactId>maven-project-info-reports-plugin</artifactId>
 					<version>3.0.0</version>
 				</plugin>
+	
+	   <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>0.8.2</version>
+        </plugin>
+   
+   <plugin>
+    <groupId>org.jacoco</groupId>
+    <artifactId>jacoco-maven-plugin</artifactId>
+    <version>0.6.3.201306030806</version>
+    <executions>
+      <!-- prepare agent for measuring integration tests -->
+      <execution>
+        <id>prepare-integration-tests</id>
+        <phase>pre-integration-test</phase>
+        <goals>
+          <goal>prepare-agent</goal>
+        </goals>
+        <configuration>
+          <destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>
+        </configuration>
+      </execution>
+   
+     <execution>
+    <id>default-report</id>
+    <goals>
+    </goals>
+    <configuration>
+        <dataFile>${project.build.directory}/jacoco.exec</dataFile>
+        <outputDirectory>${project.reporting.outputDirectory}/jacoco</outputDirectory>
+    </configuration>
+</execution>
+    </executions>
+  </plugin>
 
 			</plugins>
 		</pluginManagement>

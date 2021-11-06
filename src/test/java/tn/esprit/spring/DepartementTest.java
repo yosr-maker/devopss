@@ -78,7 +78,7 @@ logger.info("l'ajout est effectué avec succés : {} ", dep);
 //	//assertEquals(departements.size(), deptService.getAllDepartement().size());
 //}
 
-/*
+
 
 //@Test
 //public void testdeleteDepartementById() {
