@@ -23,7 +23,7 @@ public class ContratServiceImpl implements ContratService{
 	@Autowired
 	EmployeRepository empRepoistory;
 	
-	
+	//yousr
 	private static final org.apache.logging.log4j.Logger l= LogManager.getLogger(ContratServiceImpl.class);
 	
 	

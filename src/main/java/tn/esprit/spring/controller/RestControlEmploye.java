@@ -20,8 +20,8 @@ import tn.esprit.spring.entities.Entreprise;
 import tn.esprit.spring.entities.Mission;
 import tn.esprit.spring.entities.Timesheet;
 import tn.esprit.spring.services.IEmployeService;
-import tn.esprit.spring.services.IEntrepriseService;
-import tn.esprit.spring.services.ITimesheetService;
+
+//import tn.esprit.spring.services.IEntrepriseService;
 
 @RestController
 public class RestControlEmploye {
@@ -29,10 +29,8 @@ public class RestControlEmploye {
 	
 	@Autowired
 	IEmployeService iemployeservice;
-	@Autowired
-	IEntrepriseService ientrepriseservice;
-	@Autowired
-	ITimesheetService itimesheetservice;
+	//@Autowired
+	//IEntrepriseService ientrepriseservice;
 
 	
 	// http://localhost:8081/SpringMVC/servlet/ajouterEmployer
@@ -107,14 +105,6 @@ public class RestControlEmploye {
 	public List<String> getAllEmployeNamesJPQL() {
 		
 		return iemployeservice.getAllEmployeNamesJPQL();
-	}
-
-    // URL : http://localhost:8081/SpringMVC/servlet/getAllEmployeByEntreprise/1
-    @GetMapping(value = "getAllEmployeByEntreprise/{identreprise}")
-    @ResponseBody
-	public List<Employe> getAllEmployeByEntreprise(@PathVariable("identreprise") int identreprise) {
-    	Entreprise entreprise=ientrepriseservice.getEntrepriseById(identreprise);
-		return iemployeservice.getAllEmployeByEntreprise(entreprise);
 	}
 
  // Modifier email : http://localhost:8081/SpringMVC/servlet/mettreAjourEmailByEmployeIdJPQL/2/newemail

@@ -40,35 +40,62 @@ public class EmployeServiceImpl implements IEmployeService {
 		return employe.getId();
 	}
 
+	//yousr(sonar)
 	public void mettreAjourEmailByEmployeId(String email, int employeId) {
-		Employe employe = employeRepository.findById(employeId).get();
+		Optional<Employe> value= employeRepository.findById(employeId);
+		if (value.isPresent()) {
+		Employe employe = value.get();
 		employe.setEmail(email);
-		employeRepository.save(employe);
+		employeRepository.save(employe);}
 
 	}
 
+//yousr(sonar)
 	@Transactional	
 	public void affecterEmployeADepartement(int employeId, int depId) {
-		Departement depManagedEntity = deptRepoistory.findById(depId).get();
-		Employe employeManagedEntity = employeRepository.findById(employeId).get();
+		l.info("affecterEmployeADepartement loading...");
 
-		if(depManagedEntity.getEmployes() == null){
+		
+		Optional<Departement> value = deptRepoistory.findById(depId);
+		Optional<Employe> valuee = employeRepository.findById(employeId);
 
-			List<Employe> employes = new ArrayList<>();
-			employes.add(employeManagedEntity);
-			depManagedEntity.setEmployes(employes);
-		}else{
+		if (value.isPresent()) {
+			Departement depManagedEntity = value.get();
+		
 
-			depManagedEntity.getEmployes().add(employeManagedEntity);
+			if (valuee.isPresent()) {
+				Employe employeManagedEntity = valuee.get();
+			
 
-		}
+			
+			if(depManagedEntity.getEmployes() == null){
 
+				List<Employe> employes = new ArrayList<>();
+				employes.add(employeManagedEntity);
+				depManagedEntity.setEmployes(employes);
+			}else{
+
+				depManagedEntity.getEmployes().add(employeManagedEntity);
+			}
+
+			// à ajouter? 
+			deptRepoistory.save(depManagedEntity); 
+			}	}
+	
 	}
+	
+	//yousr(sonar)
 	@Transactional
 	public void desaffecterEmployeDuDepartement(int employeId, int depId)
 	{
-		Departement dep = deptRepoistory.findById(depId).get();
+		l.info("desaffecterEmployeDuDepartement loading...");
+		
+		
+		Optional<Departement> value = deptRepoistory.findById(depId);
 
+		if (value.isPresent()) {
+			Departement dep = value.get();
+			
 		int employeNb = dep.getEmployes().size();
 		for(int index = 0; index < employeNb; index++){
 			if(dep.getEmployes().get(index).getId() == employeId){
@@ -77,7 +104,7 @@ public class EmployeServiceImpl implements IEmployeService {
 			}
 		}
 	}
-
+		}
 
 	
 	public int ajouterContrat(Contrat contrat) {
@@ -86,7 +113,7 @@ public class EmployeServiceImpl implements IEmployeService {
 		return contrat.getReference();
 	}
 
-
+//yousr(sonar)
 	public void affecterContratAEmploye(int contratId, int employeId) {
 		l.info("affecterContratAEmploye loading...");
 
@@ -107,15 +134,30 @@ public class EmployeServiceImpl implements IEmployeService {
 		}
 
 	}
-
+//yousr(sonar)
 	public String getEmployePrenomById(int employeId) {
-		Employe employeManagedEntity = employeRepository.findById(employeId).get();
+		l.info("getEmployePrenomById loading...");
+		
+		Optional<Employe> value = employeRepository.findById(employeId);
+		Employe employeManagedEntity = new Employe();
+		if (value.isPresent()) {
+			employeManagedEntity = value.get();
+			
+
+		}
 		return employeManagedEntity.getPrenom();
 	}
+	
+	//yousr(sonar)
 	public void deleteEmployeById(int employeId)
 	{
-		Employe employe = employeRepository.findById(employeId).get();
+		l.info("deleteEmployeById loading...");
 
+		Optional<Employe> value = employeRepository.findById(employeId);
+
+		if (value.isPresent()) {
+			Employe employe = value.get();
+		
 		//Desaffecter l'employe de tous les departements
 		//c'est le bout master qui permet de mettre a jour
 		//la table d'association
@@ -125,7 +167,9 @@ public class EmployeServiceImpl implements IEmployeService {
 
 		employeRepository.delete(employe);
 	}
-
+	}
+	
+	//yousr(sonar)
 	public void deleteContratById(int contratId) {
 		Optional<Contrat> value = contratRepoistory.findById(contratId);
 

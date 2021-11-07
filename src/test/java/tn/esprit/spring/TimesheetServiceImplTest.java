@@ -1,4 +1,7 @@
-package tn.esprit.spring;
+
+/*
+  package tn.esprit.spring;
+
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
@@ -96,7 +99,7 @@ public class TimesheetServiceImplTest {
 		//repoMission.deleteAll();
         l.info("Final done");
     }
-	
+
 	@Test
 	public void testAddMission() throws ParseException {
 		
@@ -109,8 +112,11 @@ public class TimesheetServiceImplTest {
 		l.info("Out addMission successfully() without errors.");
 		
 		
+
 	}
 	
+
+
 	@Test
 	public void testGetAllMissions(){
 		Mission mission1 = new Mission( "mymission 1","it's my mission 1");
@@ -122,7 +128,7 @@ public class TimesheetServiceImplTest {
 		assertEquals(2, missions.size());
 		l.info("Done, list size :"  + missions.size());
 	}
-	
+
 	@Test
 	public void testDeleteMission() {
 		Mission mission = new Mission( "mymission","it's my mission");
@@ -133,7 +139,7 @@ public class TimesheetServiceImplTest {
 	}
 	
 	
-	
+
 	@Test
 	public void testAddTimesheet() throws ParseException {
 		try{
@@ -149,6 +155,7 @@ public class TimesheetServiceImplTest {
 			
 		}
 	}
+
 	
 	@Test
 	public void testValiderTimesheet() throws ParseException {
@@ -186,7 +193,7 @@ public class TimesheetServiceImplTest {
 		l.info("Valide");
 		
 	}
-	
+
 	@Test
 	public void testAffecterMissionDeppartment() throws ParseException {
 		ts.affecterMissionADepartement(19, 1);
@@ -196,10 +203,10 @@ public class TimesheetServiceImplTest {
 	
 	@Test
 	public void testGetAllTimesheet() {
-		/*SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		Date dateDebut = dateFormat.parse("2015-03-23");
 		Date dateFin = dateFormat.parse("2016-03-23");
-		ts.ajouterTimesheet(19 ,1,dateDebut,dateFin);*/
+		ts.ajouterTimesheet(19 ,1,dateDebut,dateFin);
 		
 		
 		//List<Timesheet> timesheets = (List<Timesheet>) repoTime.findAll();
@@ -207,6 +214,7 @@ public class TimesheetServiceImplTest {
 	l.info(repoTime.findAll());
 	}	
 	
-		
+
 
 }
+*/

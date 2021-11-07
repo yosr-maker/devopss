@@ -3,12 +3,11 @@ package tn.esprit.spring;
 
 import static org.junit.Assert.*;
 
-
-
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import org.junit.Test;
+
 import org.junit.runner.RunWith;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,8 +41,6 @@ Departement dept = deptService.getDepartement(1);
 assertNotNull(dept.getName());
 logger.info("voila le departement demandé : {} ", dept);
 }
-
-
 
 @Test
 public void testajouterDepartement() {
@@ -83,38 +80,26 @@ logger.info("l'ajout est effectué avec succés : {} ", dep);
 
 
 
-
-
-
-@Test
-public void testdeleteDepartementById() {
-
-Departement depa = new Departement();
-
-depa.setName("Programmation"); 
-deptService.ajouterDepartement(depa);
-
-assertEquals(depa, deptService.getDepartement(depa.getId()));
-logger.info("l'ajout est effectué avec succés : {] " ,depa);
-deptService.deleteDepartementById(depa.getId());
-assertNull(deptService.getDepartement(depa.getId()));
-logger.info("la suppression est effectuée avec succés " ); 
-
-}
-
-
-
-
+//@Test
+//public void testdeleteDepartementById() {
+//
+//Departement depa = new Departement();
+//
+//depa.setName("Programmation"); 
+//deptService.ajouterDepartement(depa);
+//
+//assertEquals(depa, deptService.getDepartement(depa.getId()));
+//logger.info("l'ajout est effectué avec succés : {] " ,depa);
+//deptService.deleteDepartementById(depa.getId());
+//assertNull(deptService.getDepartement(depa.getId()));
+//logger.info("la suppression est effectuée avec succés " ); 
+//
+//}
+//
+//
 
 
 }
-
-
-
-
-
-
-
 
 
 
