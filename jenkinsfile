@@ -12,8 +12,8 @@ pipeline{
 		stage ('Checkout GIT'){
 			steps{
 				echo 'Pulling...';
-					git branch: 'amir',
-					url : 'https://github.com/amirelabed/devopss';
+					git branch: 'nada',
+					url : 'https://github.com/nadaaissa1/devopss.git';
 			}
 		}
 
