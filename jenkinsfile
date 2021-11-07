@@ -78,19 +78,15 @@ pipeline{
 				bat "docker rmi $registry:$BUILD_NUMBER" 
 			}
 		}
-		stage('email'){
-			steps{
-			mail bcc: '', body: 'jknlk', cc: '', from: '', replyTo: '', subject: 'jhbj', to: 'houissaghassen@gmail.com'
-			}
-		}
+		
 	}
 
 	post{
 		success{
-			emailext body: 'Build success', subject: 'Jenkins', to:'houissaghassen@gmail.com'
+			emailext body: 'Build success', subject: 'Jenkins', to:'amir.elabed666@gmail.com'
 		}
 		failure{
-			emailext body: 'Build failure', subject: 'Jenkins', to:'houissaghassen@gmail.com'
+			emailext body: 'Build failure', subject: 'Jenkins', to:'amir.elabed666@gmail.com'
 		}
 
 	}
