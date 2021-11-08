@@ -38,7 +38,7 @@ public class EmployeTest {
 public void testajouterEmploye() {
 	
 	Employe employe = new Employe("Aissa", "nada", "nada1@gmail.com" , true, Role.CHEF_DEPARTEMENT);
-	Employe employe1 = new Employe("Aissa", "nada", "nada1@gmail.com" , true, Role.CHEF_DEPARTEMENT);
+	//Employe employe1 = new Employe("Aissa", "nada", "nada1@gmail.com" , true, Role.CHEF_DEPARTEMENT);
 	
 	employeService.ajouterEmploye(employe);
 assertNotNull(employe.getId());

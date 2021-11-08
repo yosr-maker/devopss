@@ -27,11 +27,6 @@ import tn.esprit.spring.services.IEntrepriseService;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class EntrepriseServiceImplTest {
-	
-	
-	
-	
-
 
 	Logger logger = LoggerFactory.getLogger(EntrepriseServiceImplTest.class);	
 	
@@ -59,7 +54,7 @@ public class EntrepriseServiceImplTest {
 		}
 	}
 	
-
+/*
 	@Test
 	public void testDeleteEntrepriseById_METHOD1() {
 		try {
@@ -73,7 +68,7 @@ public class EntrepriseServiceImplTest {
 			logger.error(e.getMessage());
 		}
 	}
-	
+	*/
 	
 	@Test
 	public void testAffectDepartmentToEntreprise(){
