@@ -39,8 +39,8 @@ import tn.esprit.spring.services.IEntrepriseService;
 import tn.esprit.spring.services.ITimesheetService;
 import tn.esprit.spring.services.TimesheetServiceImpl;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+//@RunWith(SpringRunner.class)
+//  @SpringBootTest
 public class TimesheetServiceImplTest {
 	
 //	@Autowired
