@@ -80,7 +80,7 @@ public class EntrepriseServiceImplTest {
 	@Test
 	public void testDeleteEntrepriseById_METHOD1() {
 		try {
-		Entreprise E = new Entreprise("Samsungss","EURL");
+		Entreprise E = new Entreprise("Samsungssop","EURL");
 		int Id = es.ajouterEntreprise(E);
 		int lengthBeforeDelete = es.getAllEntreprises().size();
 		es.deleteEntrepriseById(Id);
