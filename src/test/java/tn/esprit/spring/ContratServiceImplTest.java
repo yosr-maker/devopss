@@ -1,7 +1,7 @@
 
 package tn.esprit.spring;
 
-//import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.LogManager;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -21,6 +21,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 
 import tn.esprit.spring.entities.Contrat;
+import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.repository.ContratRepository;
 import tn.esprit.spring.repository.EmployeRepository;
 import tn.esprit.spring.services.ContratService;
@@ -30,7 +31,7 @@ import tn.esprit.spring.services.IEmployeService;
 @SpringBootTest
 public class ContratServiceImplTest {
 
-	//private static final org.apache.logging.log4j.Logger l= LogManager.getLogger(ContratServiceImplTest.class);
+	private static final org.apache.logging.log4j.Logger l= LogManager.getLogger(ContratServiceImplTest.class);
 
 Logger logger = LoggerFactory.getLogger(ContratServiceImplTest.class);
 	@Autowired
@@ -42,7 +43,7 @@ Logger logger = LoggerFactory.getLogger(ContratServiceImplTest.class);
 	@Autowired
 	EmployeRepository employeRepository;
 	
-	/*
+	
 	@Test(timeout =2000)
 	public void testgetAllContrats() {
 		List<Contrat> contrats = contratRepository.findAll();
@@ -50,7 +51,7 @@ Logger logger = LoggerFactory.getLogger(ContratServiceImplTest.class);
 		l.info("la liste des contrats est :", contrats);
 	}
 
-*/
+
 
 	@Test(timeout =2000)
 	public void testajouterContrat() throws ParseException {
@@ -75,7 +76,7 @@ Logger logger = LoggerFactory.getLogger(ContratServiceImplTest.class);
 			}
 	*/
 	
-	/*@Test
+	@Test
 	public void testdeleteContratById() {
 	
 				Contrat c = new Contrat(1, "CDD", 2);
@@ -84,11 +85,11 @@ Logger logger = LoggerFactory.getLogger(ContratServiceImplTest.class);
 				assertNull(employeRepository.findById(c.getReference()));
 }
 
-	*/
+	
 	
 
 
-/*
+
 	 @Test
 		public void deleteAllContratJPQL() {
 			
@@ -96,7 +97,7 @@ Logger logger = LoggerFactory.getLogger(ContratServiceImplTest.class);
 		assertNull(contratRepository.findAll() );
 				
 	 }
-	*/
+	
 
 
 	@Test(timeout =3000)
