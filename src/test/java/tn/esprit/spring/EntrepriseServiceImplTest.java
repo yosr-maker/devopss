@@ -5,9 +5,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
-import java.text.ParseException;
 import java.util.Optional;
 
+import org.apache.log4j.LogManager;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -31,92 +31,68 @@ public class EntrepriseServiceImplTest {
 	
 	
 	
-	Logger logger = LoggerFactory.getLogger(EntrepriseServiceImplTest.class);
-	
-	@Autowired
-	IEntrepriseService ientrepriseservice;
-	@Autowired
-	IDepartementService idepartement;
-	
-	@Autowired
-	DepartementRepository idepartementrepo;
-	
-	@Autowired
-	EntrepriseRepository ent;
+
+
+	Logger logger = LoggerFactory.getLogger(EntrepriseServiceImplTest.class);	
 	
 	
-	@Test
-	public void  testAjouterEntreprise() throws ParseException{
-		
-		
-		
-		
-		Entreprise entreprise = new Entreprise("vitalait", "AAAAAA") ;
-		
-		int idEntreprise=ientrepriseservice.ajouterEntreprise(entreprise);
-		
-		assertEquals(idEntreprise, entreprise.getId());
 		
 		
 		
 		
 		 
-	}
+
+	
+	@Autowired
+	EntrepriseServiceImpl es;
 	
 	@Test
-	public void testAjouterDepartement()throws ParseException{
+	public void testAddEntreprise() {
+		try {
+		Entreprise e = new Entreprise("Samsung","EURL");
+		int Id = es.ajouterEntreprise(e);
 		
-		
-		Departement department = new Departement("ressourceH");
-		int idDepartement = ientrepriseservice.ajouterDepartement(department);
-		
-		assertEquals(idDepartement, department.getId());
-		
-		
+		es.deleteEntrepriseById(Id);
+		logger.info("Add Entreprise works");
+		} catch (NullPointerException e) {
+			logger.error(e.getMessage());
+		}
 	}
-	/*
-	@Test
-	public void testDeleteEntrepriseById()throws ParseException{
-		
-		Entreprise entreprises = new Entreprise("lait", "bbbbbb") ;
-		
-		int  e = ientrepriseservice.ajouterEntreprise(entreprises);
-		ientrepriseservice.deleteEntrepriseById(e);
-		assertNull(ent.findById(e));
-		logger.info("done!! " );
 	
-		
-	}
-	*/
 
 	@Test
-	public void  testDeleteDepartementById(){
-		Departement department = new Departement("dev");
-		int d = ientrepriseservice.ajouterDepartement(department);
-		idepartement.deleteDepartementById(d);
-		idepartementrepo.findById(d);
-		assertThat(Optional.empty());
-		logger.info("success!! " );
-		
-		
+	public void testDeleteEntrepriseById_METHOD1() {
+		try {
+		Entreprise E = new Entreprise("Samsung","EURL");
+		int Id = es.ajouterEntreprise(E);
+		int lengthBeforeDelete = es.getAllEntreprises().size();
+		es.deleteEntrepriseById(Id);
+		assertEquals(lengthBeforeDelete-1 , es.getAllEntreprises().size());
+		logger.info("Delete Entreprise (%size) works");
+		} catch (NullPointerException e) {
+			logger.error(e.getMessage());
+		}
 	}
+	
 	
 	@Test
-	public void testgetEntrepriseById(){
-		
-		Entreprise entre =new Entreprise("lait", "bbbbbb") ;
-	int	id=ientrepriseservice.ajouterEntreprise(entre);
-		assertEquals(id,entre.getId());
-		assertNotNull(ientrepriseservice.getEntrepriseById(id));
-		logger.info("l objet n est pas null " );
-		Entreprise entre1=ientrepriseservice.getEntrepriseById(id);
-		
-		assertEquals(entre.getId(), entre1.getId());
-		assertEquals(entre.getName(), entre1.getName());
-		assertEquals(entre.getId(), entre1.getId());
-		logger.info("done!! " );
+	public void testAffectDepartmentToEntreprise(){
+		try {
+		Entreprise E = new Entreprise("Samsung","EURL");
+		int IdE = es.ajouterEntreprise(E);
+		Departement D = new Departement("Info");
+		int IdD = es.ajouterDepartement(D);
+		assertNull(D.getEntreprise());
+		es.affecterDepartementAEntreprise(IdD, IdE);
+		assertNotNull(D.getEntreprise().getId());
+		assertEquals(D.getEntreprise().getId(),IdE);
+		es.deleteDepartementById(IdD);
+		es.deleteEntrepriseById(IdE);
+		logger.info("Affect Department to Entreprise works");
+		} catch (NullPointerException e) {
+			logger.error(e.getMessage());
+		}
 	}
-	
 	
 	
 	
