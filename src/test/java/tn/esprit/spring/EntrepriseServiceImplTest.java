@@ -63,7 +63,7 @@ public class EntrepriseServiceImplTest {
 	@Test
 	public void testUpdateEntreprise() {
 		try {
-		Entreprise E = new Entreprise("Samsung","EURL");
+		Entreprise E = new Entreprise("vegas","EURL");
 		int Id = es.ajouterEntreprise(E);
 		E.setName("Iphone");
 		es.ajouterEntreprise(E);
