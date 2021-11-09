@@ -49,7 +49,7 @@ public class EntrepriseServiceImplTest {
 	@Test
 	public void testAddEntreprise() {
 		try {
-		Entreprise e = new Entreprise("samsung","EURL");
+		Entreprise e = new Entreprise("vegas","EURL");
 		int Id = es.ajouterEntreprise(e);
 		
 		es.deleteEntrepriseById(Id);
