@@ -36,6 +36,7 @@ pipeline{
 		 		bat """mvn package -Dmaven.test.skip=true"""
 		 	}
 		 }
+		 
 
 		 stage ("Lancement des Tests Unitaires"){
 		 	steps{
