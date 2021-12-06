@@ -1,1 +1,1 @@
-# devopss 1..2...3..4 ..5
+# devopss : It's about Implementing all the links in the continuous integration + continuous delivery chain of a devops project starting from a git push until reaching application containerization phase with docker ! Technologies Used: Git , Sonar , Nexus ,Jenkins ,Docker.
